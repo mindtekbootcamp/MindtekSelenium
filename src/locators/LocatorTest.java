@@ -8,7 +8,7 @@ public class LocatorTest {
 
     public static void main(String[] args) {
 
-        System.setProperty("webdriver.chrome.driver","/Users/parahatoraz/MindtekSelenium/chromedriver");
+        System.setProperty("webdriver.chrome.driver","/Users/parahatoraz/repo/MindtekSelenium/chromedriver");
         WebDriver driver=new ChromeDriver();
 
         driver.get("http://secure.smartbearsoftware.com/samples/testcomplete11/WebOrders/login.aspx");
