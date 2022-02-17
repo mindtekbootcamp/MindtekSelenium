@@ -18,11 +18,11 @@ public class RadioButtons {
 
        WebElement maleButton= driver.findElement(By.xpath(" (//input[@value='Male'])[1]"));
        maleButton.click();
-
-
        // How to verify radio button is selected
        boolean radioButton1= maleButton.isSelected();
         System.out.println(radioButton1);
+
+        //********************************
 
         WebElement femaleButton=driver.findElement(By.xpath("(//input[@value='Female'])[1]"));
         femaleButton.click();
