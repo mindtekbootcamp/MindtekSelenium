@@ -20,6 +20,14 @@ public class CSSTest {
          WebElement loginButton= driver.findElement(By.id("ctl00_MainContent_login_button"));
          loginButton.click();
 
+        String errorMessage= driver.findElement(By.cssSelector("form span")).getText();
+        System.out.println(errorMessage);
+
+        WebElement userName= driver.findElement(By.cssSelector("input[id*='user']"));
+        userName.click();
+
+
+
 
 
 
