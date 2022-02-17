@@ -23,6 +23,10 @@ public class TestXpath {
        pasword.sendKeys("test");
 
 
+       WebElement loginButton= driver.findElement(By.xpath("//form/div[3]/input[3]"));
+       loginButton.click();
+
+
 
 
 
