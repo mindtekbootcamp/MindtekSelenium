@@ -20,6 +20,11 @@ public class CheckBoxTest1 {
         System.out.println(checkBox1.isSelected());
 
 
+        WebElement option1= driver.findElement(By.xpath("(//input[@class='cb1-element'])[1]"));
+        option1.click();
+        System.out.println("Option 1 is selected "+ option1.isSelected());
+
+
 
 
 
