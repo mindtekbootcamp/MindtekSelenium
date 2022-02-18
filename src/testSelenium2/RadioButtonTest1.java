@@ -23,6 +23,14 @@ public class RadioButtonTest1 {
         button.click();
 
         WebElement text=driver.findElement(By.cssSelector("p.radiobutton"));
+        String message=text.getText();
+        System.out.println(message);
+
+
+
+
+
+
 
 
 
