@@ -12,10 +12,13 @@ public class CheckBoxTest1 {
         System.setProperty("webdriver.chrome.driver","/Users/parahatoraz/repo/MindtekSelenium/chromedriver");
         WebDriver driver=new ChromeDriver();
         driver.manage().window().maximize();
-        driver.get("https://demo.seleniumeasy.com/basic-radiobutton-demo.html");
+        driver.get("https://demo.seleniumeasy.com/basic-checkbox-demo.html");
 
 
         WebElement checkBox1= driver.findElement(By.id("isAgeSelected"));
+        checkBox1.click();
+        System.out.println(checkBox1.isSelected());
+
 
 
 
