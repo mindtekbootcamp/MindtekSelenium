@@ -19,13 +19,19 @@ public class CheckBoxTest3 {
 
 
         List<WebElement> allOptions= driver.findElements(By.xpath("//input[@class='cb1-element']"));
-        WebElement secondOption=driver.findElement(By.xpath("(//input[@class='cb1-element'])[2]"));
+        WebElement secondOption=driver.findElement(By.xpath("(//input[@class='cb1-element'])[4]"));
 
         for (int i = 0; i < allOptions.size(); i++) {
             if (allOptions.get(i).equals(secondOption)){
                 allOptions.get(i).click();
                 break;
             }
+        }
+
+        if (secondOption.isSelected()){
+            System.out.println("SELECTED");
+        }else {
+            System.out.println("NOT SELECTED");
         }
 
 
