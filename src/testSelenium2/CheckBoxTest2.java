@@ -21,6 +21,14 @@ public class CheckBoxTest2 {
 
         for (int i = 0; i <allOptions.size() ; i++) {
             allOptions.get(i).click();
+
+            if (allOptions.get(i).isSelected()){
+                System.out.println("PASS");
+            }else {
+                System.out.println("FAIL");
+            }
+
+
         }
 
 
