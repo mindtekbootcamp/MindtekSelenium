@@ -1,7 +1,10 @@
 package dropdowns;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -24,18 +27,50 @@ public class DropDownTest2 {
     @Test
     public void test1(){
         // Select Paris by using index
+
+        WebElement list = driver.findElement(By.name("fromPort"));
+
+        Select st = new Select(list);
+
+        st.selectByIndex(4);
+
+        String text = st.getFirstSelectedOption().getText();
+
+        System.out.println(text);
     }
 
 
     @Test
     public void test2(){
         // Select London by using visible text
+        WebElement list = driver.findElement(By.name("fromPort"));
+
+        Select st = new Select(list);
+
+        st.selectByVisibleText("London");
+
+        String str =st.getFirstSelectedOption().getText();
+
+        System.out.println(str);
+
     }
 
 
     @Test
     public void test3(){
         // Select Sydney by using value
+        WebElement list = driver.findElement(By.name("fromPort"));
+
+        Select st = new Select(list);
+
+        st.selectByValue("Sydney");
+
+        String text= st.getFirstSelectedOption().getText();
+
+
+        System.out.println(text);
+
+
     }
 
 
