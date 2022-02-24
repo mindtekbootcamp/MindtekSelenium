@@ -20,24 +20,49 @@ public class DropDownTest {
         driver =new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://the-internet.herokuapp.com/dropdown");
-
-
     }
-
 
     @Test
     public void test1(){
+
        WebElement dropDown = driver.findElement(By.id("dropdown"));
 
         Select select= new Select(dropDown);
-
         select.selectByIndex(0);
-
-         String first = select.getFirstSelectedOption().getText();
-
-        System.out.println(first);
+        String text = select.getFirstSelectedOption().getText();
+        System.out.println(text);
 
     }
+
+    @Test
+    public void test2(){
+
+        WebElement dropDown = driver.findElement(By.id("dropdown"));
+        Select s= new Select(dropDown);
+
+        s.selectByIndex(1);
+
+        String text =  s.getFirstSelectedOption().getText();
+        System.out.println(text);
+
+    }
+
+
+
+    @Test
+    public void visibleText(){
+
+        WebElement dropDown = driver.findElement(By.id("dropdown"));
+
+        Select s= new Select(dropDown);
+
+        s.selectByVisibleText("Option 2");
+
+        System.out.println(s.getFirstSelectedOption().getText());
+
+    }
+
+
 
 
 
