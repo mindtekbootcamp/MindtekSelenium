@@ -40,7 +40,7 @@ public class DropDownTest {
         WebElement dropDown = driver.findElement(By.id("dropdown"));
         Select s= new Select(dropDown);
 
-        s.selectByIndex(1);
+        s.selectByIndex(0);
 
         String text =  s.getFirstSelectedOption().getText();
         System.out.println(text);
@@ -56,9 +56,24 @@ public class DropDownTest {
 
         Select s= new Select(dropDown);
 
-        s.selectByVisibleText("Option 2");
+        s.selectByVisibleText("Option 1");
 
         System.out.println(s.getFirstSelectedOption().getText());
+
+    }
+
+
+    @Test
+    public void byValue(){
+
+      WebElement element =  driver.findElement(By.id("dropdown"));
+
+      Select str = new Select(element);
+
+
+      str.selectByValue("2");
+
+        System.out.println(str.getFirstSelectedOption().getText());
 
     }
 
