@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -29,48 +30,58 @@ public class DropDownTest2 {
         // Select Paris by using index
 
         WebElement list = driver.findElement(By.name("fromPort"));
-
         Select st = new Select(list);
-
         st.selectByIndex(4);
-
         String text = st.getFirstSelectedOption().getText();
-
         System.out.println(text);
-    }
 
+        // assert that Paris is selected
+
+        WebElement paris =  driver.findElement(By.xpath("//select[@name='fromPort']/option[5]"));
+        boolean b = paris.isSelected();
+        Assert.assertTrue(b);
+
+        System.out.println("Assertion Passed");
+
+    }
 
     @Test
     public void test2(){
         // Select London by using visible text
         WebElement list = driver.findElement(By.name("fromPort"));
-
         Select st = new Select(list);
-
         st.selectByVisibleText("London");
-
         String str =st.getFirstSelectedOption().getText();
-
         System.out.println(str);
 
-    }
 
+        // assert that London is selected
+
+        WebElement londonText= driver.findElement(By.xpath("//select[@name='fromPort']/option[3]"));
+         boolean  london = londonText.isSelected();
+         Assert.assertTrue(london);
+        System.out.println("Assertion Passed");
+
+
+
+    }
 
     @Test
     public void test3(){
         // Select Sydney by using value
         WebElement list = driver.findElement(By.name("fromPort"));
-
         Select st = new Select(list);
-
         st.selectByValue("Sydney");
-
         String text= st.getFirstSelectedOption().getText();
-
-
         System.out.println(text);
 
+        // assert that Sydney is selected
 
+
+        WebElement londonText= driver.findElement(By.xpath("//select[@name='fromPort']/option[9]"));
+        boolean  sydney = londonText.isSelected();
+        Assert.assertTrue(sydney);
+        System.out.println("Assertion Passed");
     }
 
 
