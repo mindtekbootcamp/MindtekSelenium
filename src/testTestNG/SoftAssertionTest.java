@@ -6,13 +6,13 @@ import org.testng.asserts.SoftAssert;
 public class SoftAssertionTest {
 
     SoftAssert softAssert = new SoftAssert();
-    SoftAssert softAssert2 = new SoftAssert();
+   // SoftAssert softAssert2 = new SoftAssert();
 
 
     @Test
-    public void test1(){
+    public void login(){
 
-        softAssert.assertEquals("TEST", "TEST12313");
+        softAssert.assertEquals("TEST", "TEST1231");
         softAssert.assertTrue(true);
         softAssert.assertFalse(false);
 
@@ -22,14 +22,26 @@ public class SoftAssertionTest {
     }
 
     @Test
-    public void test2(){
+    public void search(){
 
-        softAssert2.assertEquals(5, 5);
+        softAssert.assertEquals(5, 6);
 
         System.out.println(" This is second method");
 
-        softAssert2.assertAll();
+        softAssert.assertAll();
     }
+
+
+    @Test
+    public void signUp(){
+
+        softAssert.assertEquals(5, 6);
+
+        System.out.println(" This is second method");
+
+        softAssert.assertAll();
+    }
+
 
 
 
