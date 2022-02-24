@@ -71,7 +71,7 @@ public class DropDownTest {
       Select str = new Select(element);
 
 
-      str.selectByValue("2");
+      str.selectByValue("1");
 
         System.out.println(str.getFirstSelectedOption().getText());
 
