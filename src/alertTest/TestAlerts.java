@@ -35,7 +35,7 @@ public class TestAlerts {
 
         Thread.sleep(2000);
 
-       // driver.switchTo().alert().dismiss();
+       driver.switchTo().alert().dismiss();
 
         driver.switchTo().alert().accept();
         driver.switchTo().alert().accept();
