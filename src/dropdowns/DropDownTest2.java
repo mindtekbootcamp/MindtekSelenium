@@ -9,6 +9,9 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
 public class DropDownTest2 {
 
 
@@ -20,6 +23,8 @@ public class DropDownTest2 {
         System.setProperty("webdriver.chrome.driver","/Users/parahatoraz/repo/MindtekSelenium/chromedriver");
         driver =new ChromeDriver();
         driver.manage().window().maximize();
+
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
         driver.get("https://demo.guru99.com/test/newtours/reservation.php");
     }
@@ -83,6 +88,37 @@ public class DropDownTest2 {
         Assert.assertTrue(sydney);
         System.out.println("Assertion Passed");
     }
+
+
+    @Test
+    public void getSize(){
+
+        WebElement list = driver.findElement(By.name("fromPort"));
+        Select st = new Select(list);
+        List<WebElement> dropDownList = st.getOptions();
+
+        System.out.println("There are " + dropDownList.size() + "cities");
+
+
+    }
+
+    @Test
+    public void print(){
+
+        WebElement list = driver.findElement(By.name("fromPort"));
+        Select st = new Select(list);
+
+        List<WebElement> dropDownList = st.getOptions();
+
+        for (WebElement elements: dropDownList  ) {
+            System.out.println(elements.getText());
+        }
+
+
+
+    }
+
+
 
 
 
