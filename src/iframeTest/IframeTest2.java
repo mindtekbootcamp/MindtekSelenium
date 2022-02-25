@@ -28,7 +28,21 @@ public class IframeTest2 {
     @Test
     public void test1(){
 
+        driver.switchTo().frame(driver.findElement(By.id("iframeResult")));
+
+        driver.findElement(By.id("fname")).clear();
+
         driver.findElement(By.id("fname")).sendKeys("Emrah");
+
+        driver.switchTo().defaultContent();
+        //driver.switchTo().parentFrame();
+
+
+        // print size of frames in this app
+
+        int sizeoFFrame = driver.findElements(By.tagName("iframe")).size();
+        System.out.println("There are " + sizeoFFrame);
+
 
 
     }
