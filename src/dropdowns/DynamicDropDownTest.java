@@ -44,10 +44,12 @@ public class DynamicDropDownTest {
            }
         }
 
-       boolean b = driver.findElement(By.id("bigsearch-query-location-input")).isDisplayed();
-        Assert.assertTrue(b);
 
-        System.out.println("PASS");
+
+
+
+
+
     }
 
 
