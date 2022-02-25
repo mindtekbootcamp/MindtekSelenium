@@ -45,10 +45,6 @@ public class TestIframe {
        int sizeofFrames = driver.findElements(By.tagName("iFrame")).size();
 
         System.out.println(sizeofFrames);
-
-
-
-
     }
 
 
