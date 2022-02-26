@@ -26,7 +26,7 @@ public class TestActions {
 
     }
 
-    @Test
+   // @Test
     public void test1(){
 
         driver.findElement(By.id("txtUsername")).sendKeys("Admin");
@@ -43,7 +43,40 @@ public class TestActions {
         act.moveToElement(userManagement).build().perform();
         act.moveToElement(users).click().build().perform();
 
+    }
+
+    @Test
+    public void test2(){
+
+        driver.findElement(By.id("txtUsername")).sendKeys("Admin");
+        driver.findElement(By.id("txtPassword")).sendKeys("admin123");
+        driver.findElement(By.id("btnLogin")).click();
+
+
+        // PIM --> CONFIGURATION --> CUSTOM FIELDS
+        WebElement pim = driver.findElement(By.xpath("//*[@id='menu_pim_viewPimModule']"));
+        WebElement configuration = driver.findElement(By.xpath("//*[@id='menu_pim_Configuration']"));
+        WebElement customFields = driver.findElement(By.xpath("//*[@id='menu_pim_listCustomFields']"));
+
+        Actions ac = new Actions(driver);
+
+        ac.moveToElement(pim).build().perform();
+        ac.moveToElement(configuration).build().perform();
+        ac.moveToElement(customFields).click().build().perform();
+
+
+
+
+
+
+
+
+
 
     }
+
+
+
+
 
 }
