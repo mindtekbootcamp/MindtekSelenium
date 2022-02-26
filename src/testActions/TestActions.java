@@ -60,18 +60,11 @@ public class TestActions {
 
         Actions ac = new Actions(driver);
 
-        ac.moveToElement(pim).build().perform();
-        ac.moveToElement(configuration).build().perform();
-        ac.moveToElement(customFields).click().build().perform();
+//        ac.moveToElement(pim).build().perform();
+//        ac.moveToElement(configuration).build().perform();
+//        ac.moveToElement(customFields).click().build().perform();
 
-
-
-
-
-
-
-
-
+        ac.moveToElement(pim).moveToElement(configuration).moveToElement(customFields).click().build().perform();
 
     }
 
