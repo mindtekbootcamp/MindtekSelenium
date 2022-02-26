@@ -9,6 +9,8 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import java.util.concurrent.TimeUnit;
+
 
 public class TestExplicitlyWait {
 
@@ -21,31 +23,41 @@ public class TestExplicitlyWait {
     public void launchApp(){
 
         System.setProperty("webdriver.chrome.driver","/Users/parahatoraz/drivers/chromedriver");
-
         driver=new ChromeDriver();
         driver.manage().window().maximize();
-
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.get("https://the-internet.herokuapp.com/dynamic_controls");
+
+
     }
 
     @Test
     public void testWait(){
-
         driver.findElement(By.xpath("//button[@onclick='swapCheckbox()']")).click();
 
-
-        WebDriverWait wait = new WebDriverWait(driver, 20);
-
+        WebDriverWait wait = new WebDriverWait(driver, 30);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("message")));
 
-
         System.out.println(driver.findElement(By.id("message")).getText());
-
     }
 
 
     @Test
     public void test2(){
+
+        driver.findElement(By.xpath("//button[@onclick='swapCheckbox()']")).click();
+
+        WebDriverWait wait = new WebDriverWait(driver, 20);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("message")));
+
+        driver.findElement(By.xpath("//button[@onclick='swapCheckbox()']")).click();
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("message")));
+
+        System.out.println(driver.findElement(By.id("message")).getText());
+
+
+
 
 
     }
