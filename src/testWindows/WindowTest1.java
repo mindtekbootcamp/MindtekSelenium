@@ -84,11 +84,6 @@ public class WindowTest1 {
 
         Assert.assertEquals(actualResult, expectedResult);
 
-
-
-
-
-
     }
 
 
