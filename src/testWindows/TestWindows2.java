@@ -92,7 +92,7 @@ public class TestWindows2 {
     public void tearDown(){
 
        // driver.close();   // it closes current window
-        driver.quit();   // it closes all windows
+       // driver.quit();   // it closes all windows
 
     }
 }
