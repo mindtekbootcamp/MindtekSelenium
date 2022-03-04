@@ -42,6 +42,11 @@ public class TableTest2 {
         System.out.println(headSize);
 
         // Print Dimarison
+        WebElement name = driver.findElement(By.xpath("//table[@class='table']/tbody/tr[5]/td[4]"));
+        String Dimarison = name.getText();
+
+        System.out.println(Dimarison);
+
     }
 
 }

@@ -59,6 +59,37 @@ public class TableTest1 {
 
     }
 
+    @Test
+    public void getAllData(){
+
+        List<WebElement> rows =  driver.findElements(By.xpath("//table[@id='task-table']/tbody/tr"));
+        int rowSize = rows.size();
+
+        List<WebElement> headers =driver.findElements(By.xpath("//table[@id='task-table']/thead/tr/th"));
+        int headerSize= headers.size();
+
+        for (int r = 1; r <=rowSize ; r++) {
+
+            for (int c = 1; c <= headerSize ; c++) {
+
+               String text = driver.findElement(By.xpath("//table[@id='task-table']/tbody/tr["+r+"]/td["+c+"]")).getText();
+
+                System.out.print(text + "       ");
+            }
+
+            System.out.println();
+
+        }
+
+
+
+
+    }
+
+
+
+
+
 
 
 }
