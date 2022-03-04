@@ -48,5 +48,17 @@ public class TableTest1 {
     }
 
 
+    @Test
+    public void getValue(){
+        WebElement name = driver.findElement(By.xpath("//table[@id='task-table']/tbody/tr[2]/td[3]"));
+       String n =  name.getText();
+        System.out.println(n);
+
+       String  emily = driver.findElement(By.xpath("//table[@id='task-table']/tbody/tr[4]/td[3]")).getText();
+        System.out.println(emily);
+
+    }
+
+
 
 }
