@@ -8,12 +8,13 @@ import org.testng.annotations.Test;
 
 public class TestScroll1 {
 
-
     WebDriver driver;
+
 
 
     @BeforeMethod
     public void launchApp(){
+
 
         System.setProperty("webdriver.chrome.driver","/Users/parahatoraz/repo/MindtekSelenium/chromedriver");
         driver =new ChromeDriver();
@@ -23,10 +24,18 @@ public class TestScroll1 {
 
 
     @Test
-    public void test(){
+    public void test() throws InterruptedException {
 
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0, 2693)");
+
+        Thread.sleep(3000);
+
+        js.executeScript("window.scrollBy(0, -2693)");
+
+
+
+       // js.executeScript("window.scrollBy(2693, 0)");
     }
 
 
