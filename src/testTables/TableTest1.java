@@ -68,9 +68,9 @@ public class TableTest1 {
         List<WebElement> headers =driver.findElements(By.xpath("//table[@id='task-table']/thead/tr/th"));
         int headerSize= headers.size();
 
-        for (int r = 1; r <=rowSize ; r++) {
+        for (int r = 1; r <=rowSize ; r++) {   // 3
 
-            for (int c = 1; c <= headerSize ; c++) {
+            for (int c = 1; c <= headerSize ; c++) {   // 1 ,2, 3 ,4
 
                String text = driver.findElement(By.xpath("//table[@id='task-table']/tbody/tr["+r+"]/td["+c+"]")).getText();
 

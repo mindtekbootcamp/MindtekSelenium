@@ -49,4 +49,10 @@ public class TableTest2 {
 
     }
 
+    @Test
+    public void getAllData(){
+
+
+    }
+
 }
