@@ -40,8 +40,11 @@ public class TableTest1 {
 
     @Test
     public void getColumnSize(){
+        // Expected Result is 4
+     List<WebElement> headers =driver.findElements(By.xpath("//table[@id='task-table']/thead/tr/th"));
+     int headerSize= headers.size();
 
-
+     System.out.println(headerSize);
     }
 
 
