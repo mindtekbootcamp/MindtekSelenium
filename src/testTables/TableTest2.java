@@ -52,6 +52,23 @@ public class TableTest2 {
     @Test
     public void getAllData(){
 
+       int rowsSize  = driver.findElements(By.xpath("//table[@class='table']/tbody/tr")).size();
+       int headSize  = driver.findElements(By.xpath("//table[@class='table']/thead/tr/th")).size();
+
+        for (int i = 1; i <=rowsSize ; i++) {
+
+            for (int j = 1; j <=headSize ; j++) {
+
+            String value =  driver.findElement(By.xpath("//table[@class='table']/tbody/tr["+i+"]/td["+j+"]")).getText();
+
+                System.out.print(value + "      ");
+            }
+
+            System.out.println();
+
+        }
+
+
 
     }
 
